@@ -45,6 +45,6 @@ EXPOSE 8080
 CMD ["./parcel"]
 
 #command to build the Docker image
-# docker build -t parcel:latest .
+# docker build -t <your_docker_id>/parcel:v1 .
 # command to run the Docker container
-# docker run -p 8080:8080 -v ./tracker.db:/app/tracker.db parcel:latest
+# docker run -p 8080:8080 -v ./tracker.db:/app/tracker.db <your_docker_id>/parcel:v1
