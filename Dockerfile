@@ -2,7 +2,6 @@
 # Use a multi-stage build to create a minimal final image
 # Use the official Golang image as the base image for building the application
 # Stage 1: Build the Go application
-
 FROM golang:1.22 AS builder
 
 # Set the working directory inside the container
@@ -17,11 +16,10 @@ RUN go mod download
 # Copy the Go source files to the working directory
 COPY *.go ./
 
-# Set environment variables for building the Go application
+# Run the Go build command to compile the application
 RUN go build  --trimpath -o /parcel
 
 # Stage 2: Create a minimal final image
-# Use a minimal base image for the final application
 # Use the official Alpine Linux image as the base image for the final application
 FROM alpine:latest
 
